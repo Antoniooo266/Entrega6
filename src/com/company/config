@@ -1,2 +1,7 @@
 
-capacidad ="30"
+
+capacidad = 40
+VALUE = 15
+REGULAR = 10
+PLUS = 10
+FLEXIPLUS = 5
