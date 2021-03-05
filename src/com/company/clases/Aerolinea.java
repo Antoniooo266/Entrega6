@@ -1,7 +1,7 @@
 package com.company.clases;
 
 public class Aerolinea {
-    private Vuelos[] VuelosRegisterList;
+    public static Vuelos[] VuelosRegisterList;
     private Pasajero[] PasajerosRegisterList;
     private Reserva[] ReservaRegisterList;
 
@@ -74,10 +74,10 @@ public class Aerolinea {
         }
     }
 
-    public void registarReserva(Reserva reserva){
+    public void registarReserva(Reserva reserva) throws Sugerencias{
         boolean idIsInUse = VerficarReserva(reserva);
         if (idIsInUse == true){
-            System.out.println("La reserva ya esta comprada");
+            throw new Sugerencias();
         }
         for (int i = 0; i < ReservaRegisterList.length; i++) {
             if (ReservaRegisterList[i] == null) {
