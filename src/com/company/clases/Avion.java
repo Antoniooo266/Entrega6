@@ -1,13 +1,11 @@
-package com.company;
+package com.company.clases;
 
-import java.util.Properties;
 
-public class Avion extends Vuelos{
+public class Avion{
     private int capacidad = 40;
     private String nombreAvion;
 
-    public Avion(String salida, String llegada, int hora, int capacidad, String nombreAvion) {
-        super(salida, llegada, hora);
+    public Avion(int capacidad, String nombreAvion) {
         this.capacidad = capacidad;
         this.nombreAvion = nombreAvion;
     }

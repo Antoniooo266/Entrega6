@@ -1,11 +1,18 @@
-package com.company;
+package com.company.clases;
 
-public class Pasajero extends Reserva{
+public class Pasajero{
+    private int id;
     private String nombre;
     private Asientos asiento;
 
-    public Pasajero(String salida, String llegada, int hora, int capacidad, String nombreAvion, boolean reservado) {
-        super(salida, llegada, hora, capacidad, nombreAvion, reservado);
+    public Pasajero(int id, String nombre, Asientos asiento) {
+        this.id = id;
+        this.nombre = nombre;
+        this.asiento = asiento;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNombre() {
@@ -23,4 +30,6 @@ public class Pasajero extends Reserva{
     public void setAsiento(Asientos asiento) {
         this.asiento = asiento;
     }
+
+
 }
