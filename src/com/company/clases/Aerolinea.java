@@ -1,5 +1,7 @@
 package com.company.clases;
 
+import java.util.Scanner;
+
 public class Aerolinea {
     public static Vuelos[] VuelosRegisterList;
     private Pasajero[] PasajerosRegisterList;
@@ -10,6 +12,11 @@ public class Aerolinea {
         PasajerosRegisterList = new Pasajero[40];
         ReservaRegisterList = new Reserva[40];
     }
+
+    public static void crearPasajero() {
+        crearPasajero();
+    }
+
 
     public boolean VerificarPasajero(Pasajero pasajero){
         boolean idNotUse = false;
@@ -49,16 +56,30 @@ public class Aerolinea {
         return idNotUse;
     }
 
-    public Pasajero crearPasajero(int id, String nombre, Asientos asiento){
+    public static Pasajero crearPasajero(int id, String nombre, Asientos asiento){
+        Scanner sc = new Scanner(System.in);
+        id++;
+        System.out.println("Introduzca su nombre: ");
+        nombre = sc.next();
+        System.out.println("Introduzca el asiento que desea");
+        Asientos asientos = asiento.VALUE;
+        System.out.println("VALUE");
+        System.out.println("REGULAR");
+        System.out.println("PLUS");
+        System.out.println("FLEXPLUS");
+        switch (asientos){
+            case VALUE -> asiento = asientos.VALUE;
+            case REGULAR -> asiento = asientos.REGULAR;
+            case PLUS -> asiento = asientos.PLUS;
+            case FLEXIPLUS -> asiento = asientos.FLEXIPLUS;
+        }
         return new Pasajero(id, nombre, asiento);
     }
 
-    public Vuelos crearVuelos(String salida, String llegada, int hora, int idVuelo){
-        return new Vuelos(salida, llegada, hora, idVuelo);
-    }
 
-    public Reserva crearReserva(int id, String nombre, Asientos asiento, boolean reservado){
-        return new Reserva(id, nombre, asiento, reservado);
+    public Reserva crearReserva(int id, String nombre, Asientos asiento, boolean reservado, int idReserva){
+
+        return new Reserva(id, nombre, asiento, reservado, idReserva);
     }
 
     public void registarPasajero(Pasajero pasajero){

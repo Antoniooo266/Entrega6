@@ -4,9 +4,10 @@ public class Reserva extends Pasajero{
     private int idReserva;
     private boolean reservado;
 
-    public Reserva(int id, String nombre, Asientos asiento, boolean reservado) {
+    public Reserva(int id, String nombre, Asientos asiento, boolean reservado, int idReserva) {
         super(id, nombre, asiento);
         this.reservado = reservado;
+        this.idReserva = idReserva;
     }
 
 
